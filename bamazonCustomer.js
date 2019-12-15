@@ -21,17 +21,23 @@ inquirer
             message: 'How many would you like to buy?',
             name: 'amount'
         }
-    ])
-    .then(function(response) { 
-        if ()
+    ]).then(function(response) {
+        
+        var productChosen = response.productID;
+        var amountChosen = response.amount;
+        
+        console.log('Product Chosen: ', productChosen);
+        console.log('Amount Chosen: ', amountChosen); 
+
+
+        //check if store has enough of product: 
+        if (amountChosen > stock_quantity) { 
+            console.log('Insufficient quantity of product in stock'); 
+        } else if (amountChosen <= stock_quantity) { 
+            //upadte sql database:
+            
+            //log total cost:
+            console.log('Your total cost is: ' + amountChosen * price); 
+        }
     })
-
-// Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
-
-// If not, the app should log a phrase like Insufficient quantity!, and then prevent the order from going through.
-
-// However, if your store does have enough of the product, you should fulfill the customer's order.
-
-// This means updating the SQL database to reflect the remaining quantity.
-// Once the update goes through, show the customer the total cost of their purchase.
 
