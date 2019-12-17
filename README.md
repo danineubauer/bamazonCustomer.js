@@ -3,7 +3,7 @@
 
 ### What does this do? :hear_no_evil:
 
-<video src="./Video of flow/screenvid.mp4" type="video/mp4" >
+<img src="/Video of flow/screenvid.mp4" type="video/mp4" >
 
 <img src="/Video of flow/MySQLscreenshot.png">
 
