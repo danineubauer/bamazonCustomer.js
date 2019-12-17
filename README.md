@@ -3,8 +3,10 @@
 
 ### What does this do? :hear_no_evil:
 
-[![video](file:///C:/Users/dneub/Downloads/screenshotofvid.webp)](https://drive.google.com/file/d/15MD-YR0Ntv-Gwiq3RGCQBLDyRblmhFTJ/view)
+<https://drive.google.com/file/d/15MD-YR0Ntv-Gwiq3RGCQBLDyRblmhFTJ/view>
 
+<img src='file:///C:/Users/dneub/Downloads/screenshotofvid.webp'>
+    
 <img src="/Video of flow/MySQLscreenshot.png">
 
 
