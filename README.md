@@ -5,9 +5,9 @@
 
 <https://drive.google.com/file/d/15MD-YR0Ntv-Gwiq3RGCQBLDyRblmhFTJ/view>
 
-<img src='/Video of flow/screenshotofvid.png' width=100>
+<img src='/Video of flow/screenshotofvid.png' width=500>
     
-<img src="/Video of flow/MySQLscreenshot.png" width=100>
+<img src="/Video of flow/MySQLscreenshot.png" width=500>
 
 
 ### About the app: :see_no_evil:
