@@ -86,7 +86,10 @@ var allowInquirer = function() {
                         ],
                         function(err, res) { 
                             if (err) throw err;
-                            console.log('Rows Changed in mysql: ' + res.affectedRows);                 }
+                            console.log('Rows Changed in mysql: ' + res.affectedRows);                 
+                            //stop the connection to mysql:
+                            connection.end();
+                        }
                     )
                 }
             })
