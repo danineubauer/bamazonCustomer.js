@@ -54,7 +54,7 @@ var allowInquirer = function() {
             var productChosen = response.productID;
             var amountChosen = response.amount;
             
-            
+            //pull out queries from mysql:
             connection.query('SELECT * FROM products', function(err, res){ 
                 productName = res[productChosen -1].product_name; 
                 var productAmount = res[productChosen -1].stock_quantity; 
@@ -65,31 +65,31 @@ var allowInquirer = function() {
                 console.log('Product ID: ', productChosen, '| ',  'Product Chosen: ' + productName);
                 console.log('Amount Chosen: ', amountChosen,  '| ', 'Amount in Stock: ' + productAmount); 
                 
+                //check if amount is in stock:
                 if (amountChosen > productAmount) { 
                     console.log('Unfortunatly we do not have that much of this product');
                 } else { 
                     console.log('Great! We have this amount in our storage')
                     console.log('The product price is: ' + productPrice + ", and your total purchase is: " + productPrice*amountChosen)
-                    console.log('There are now ' + newAmountInStock + ' of this products in stock.') 
+                    console.log('There are NOW ' + newAmountInStock + ' of this products in stock.') 
+                
+                    //update the database: 
+                    connection.query(
+                        'UPDATE products SET ? WHERE ?',
+                        [
+                            {
+                                stock_quantity: newAmountInStock
+                            }, 
+                            { 
+                                product_name: 'dress'
+                            }
+                        ],
+                        function(err, res) { 
+                            if (err) throw err;
+                            console.log('Rows Changed in mysql: ' + res.affectedRows);                 }
+                    )
                 }
             })
-            
-            //Update stock amount on database:
-            connection.query(
-                'UPDATE products SET ? WHERE ?',
-                [
-                    {
-                        stock_quantity: newAmountInStock
-                    }, 
-                    { 
-                        product_name: productName
-                    }
-                ],
-                function(err, res) { 
-                    if (err) throw err;
-                    console.log('mysql changed')
-                }
-            )
         });
 };
 
