@@ -29,6 +29,8 @@ connection.connect(function(err){
     })
 })
 
+var newAmountInStock;
+var productName; 
 
 // //prompt users: 1) ask for ID of product, 2) how many units they'd like to buy: 
 var allowInquirer = function() { 
@@ -54,40 +56,44 @@ var allowInquirer = function() {
             
             
             connection.query('SELECT * FROM products', function(err, res){ 
-                var productName = res[productChosen -1].product_name; 
+                productName = res[productChosen -1].product_name; 
                 var productAmount = res[productChosen -1].stock_quantity; 
                 var productPrice = res[productChosen -1].price;
 
+                newAmountInStock = productAmount - amountChosen; 
+
                 console.log('Product ID: ', productChosen, '| ',  'Product Chosen: ' + productName);
                 console.log('Amount Chosen: ', amountChosen,  '| ', 'Amount in Stock: ' + productAmount); 
-            
+                
                 if (amountChosen > productAmount) { 
                     console.log('Unfortunatly we do not have that much of this product');
                 } else { 
                     console.log('Great! We have this amount in our storage')
                     console.log('The product price is: ' + productPrice + ", and your total purchase is: " + productPrice*amountChosen)
+                    console.log('There are now ' + newAmountInStock + ' of this products in stock.') 
                 }
             })
             
+            //Update stock amount on database:
             connection.query(
                 'UPDATE products SET ? WHERE ?',
                 [
                     {
-                        stock_quantity: productAmount - amountChosen; 
+                        stock_quantity: newAmountInStock
                     }, 
                     { 
-                        item_id: 
+                        product_name: productName
                     }
-                ]
+                ],
+                function(err, res) { 
+                    if (err) throw err;
+                    console.log('mysql changed')
+                }
             )
         });
 };
 
-var updateDatabase = function() { 
-    console.log('The new stock amount is: ' + res[productChosen -1].stock_quantity); 
-}
 
-    //         //upadte sql database:
 
 
 
