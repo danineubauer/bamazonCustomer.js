@@ -1,15 +1,15 @@
 # bamazonCustomer.js
-By Danielle Neubauer 
+## By Danielle Neubauer 
 
-# What does this do? :hear_no_evil:
+### What does this do? :hear_no_evil:
 
-![screenshot of mysql after database was updated]('.\Video of flow/MySQL Workbench 12_17_2019 12_15_27 PM.png)
+![screenshot]('.\Video of flow/MySQL Workbench 12_17_2019 12_15_27 PM.png)
 
-# About the app: :see_no_evil:
+### About the app: :see_no_evil:
 
 This is the first Node & MySQL assignment of the UC Berkeley Coding BootCamp. The goal of this assignment was to practice building databases and accessing them through the server to read & modify them (delete/modify/add data, etc.). 
 
-# Programs & technology used: :speak_no_evil:
+### Programs & technology used: :speak_no_evil:
 
 The program languaged used to build this application is Javascript. To allow for Javascript to run in the server, I used Node.js and npm packages such as: 
 
