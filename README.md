@@ -3,9 +3,11 @@
 
 ### What does this do? :hear_no_evil:
 
-[<video type="video/mp4" src="/Video of flow/screenvid.mp4">]
+<video>
+<source src="/Video of flow/screenvid.mp4" type="video/mp4" >
+</video>
 
-[<img src="/Video of flow/MySQLscreenshot.png">]
+<img src="/Video of flow/MySQLscreenshot.png">
 
 
 ### About the app: :see_no_evil:
