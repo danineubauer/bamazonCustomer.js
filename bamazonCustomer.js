@@ -81,7 +81,7 @@ var allowInquirer = function() {
                                 stock_quantity: newAmountInStock
                             }, 
                             { 
-                                product_name: 'dress'
+                                product_name: productName
                             }
                         ],
                         function(err, res) { 
