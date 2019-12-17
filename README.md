@@ -3,7 +3,7 @@
 
 ### What does this do? :hear_no_evil:
 
-[![video](C:/Users/dneub/Downloads/screenshotofvid.webp)](https://drive.google.com/file/d/15MD-YR0Ntv-Gwiq3RGCQBLDyRblmhFTJ/view)
+[![video](file:///C:/Users/dneub/Downloads/screenshotofvid.webp)](https://drive.google.com/file/d/15MD-YR0Ntv-Gwiq3RGCQBLDyRblmhFTJ/view)
 
 <img src="/Video of flow/MySQLscreenshot.png">
 
