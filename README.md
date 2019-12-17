@@ -3,7 +3,7 @@
 
 ### What does this do? :hear_no_evil:
 
-![screenshot]('.\Video of flow/MySQL Workbench 12_17_2019 12_15_27 PM.png)
+![image]('./Video of flow/MySQLscreenshot.png')
 
 ### About the app: :see_no_evil:
 
