@@ -38,7 +38,7 @@ var allowInquirer = function() {
             {
                 type: 'list', 
                 message: 'Which product would you like to buy?', 
-                choices: ['1. Dress', '2. Pants', '3. Computer', '4. Socks', '5. Heals', '6. Tote Bag', '7. Shirt', '8. Skirt', '9. Necklace', '10. Earings'], 
+                choices: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'], 
                 name: 'productID' 
             }, 
             {
@@ -52,23 +52,42 @@ var allowInquirer = function() {
             var productChosen = response.productID;
             var amountChosen = response.amount;
             
-            console.log('Product Chosen: ', productChosen);
-            console.log('Amount Chosen: ', amountChosen); 
+            
+            connection.query('SELECT * FROM products', function(err, res){ 
+                var productName = res[productChosen -1].product_name; 
+                var productAmount = res[productChosen -1].stock_quantity; 
+                var productPrice = res[productChosen -1].price;
+
+                console.log('Product ID: ', productChosen, '| ',  'Product Chosen: ' + productName);
+                console.log('Amount Chosen: ', amountChosen,  '| ', 'Amount in Stock: ' + productAmount); 
+            
+                if (amountChosen > productAmount) { 
+                    console.log('Unfortunatly we do not have that much of this product');
+                } else { 
+                    console.log('Great! We have this amount in our storage')
+                    console.log('The product price is: ' + productPrice + ", and your total purchase is: " + productPrice*amountChosen)
+                }
+            })
+            
+            connection.query(
+                'UPDATE products SET ? WHERE ?',
+                [
+                    {
+                        stock_quantity: productAmount - amountChosen; 
+                    }, 
+                    { 
+                        item_id: 
+                    }
+                ]
+            )
         });
 };
-    
 
+var updateDatabase = function() { 
+    console.log('The new stock amount is: ' + res[productChosen -1].stock_quantity); 
+}
 
-    //     //check if store has enough of product: 
-    //     if (amountChosen > stock_quantity) { 
-    //         console.log('Insufficient quantity of product in stock'); 
-    //     } else if (amountChosen <= stock_quantity) { 
     //         //upadte sql database:
-            
-    //         //log total cost:
-    //         console.log('Your total cost is: ' + amountChosen * price); 
-    //     }
-    // })
-    // ]);
+
 
 
